@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div>
+    <div>
+        <h3>Add Badge</h3>
+        <form method="post" action='{{url_for("add_badge")}}' enctype="multipart/form-data">
+            <div>
+                <label>Badge Name</label>
+                <input type="text" name="badge_name" required>
+            </div>
+            <div>
+                <label>Badge Description</label>
+                <input type="text" name="badge_description" required>
+            </div>
+            <div>
+                <label>Upload Badge</label>
+                <input type="file" name="upload_badge" required>
+            </div>
+            <div>
+                <label>Eligible Students</label>
+                <input type="text" name="eligible_students" required>
+            </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</div>
+{% endblock %}

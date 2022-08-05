@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div>
+    <h3>Enter Details</h3>
+    <hr>
+    <form method="post" action='{{url_for("badge")}}' enctype="multipart/form-data">
+        <label>Enter Badge Name</label>
+        <input type="text" name="badge_name" required/>
+        <label>Enter Email ID</label>
+        <input type="email" name="email_id" required/>
+        <input type="submit" value="Check">
+    </form>
+
+    <div>
+        {% if datas%}
+        {% for row in datas %}
+        <img src="{{url_for('static', filename='images/'+row)}}" alt="Badge image" width="100" height="100">
+        <br><br>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
